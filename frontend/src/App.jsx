@@ -3,6 +3,7 @@ import { Cpu, CircuitBoard, MemoryStick, Monitor, HardDrive, Zap, Box } from 'lu
 import ComponentPicker from './components/ComponentPicker.jsx';
 import BuildSummary from './components/BuildSummary.jsx';
 import CompatibilityPanel from './components/CompatibilityPanel.jsx';
+import PerformancePanel from './components/PerformancePanel.jsx';
 import BuildScene from './components/BuildScene.jsx';
 import { fetchComponents, checkCompatibility as checkCompatibilityRequest } from './lib/api.js';
 
@@ -149,6 +150,7 @@ export default function App() {
             </div>
             <BuildSummary total={total} checking={checking} />
             <CompatibilityPanel result={result} checking={checking} />
+            <PerformancePanel performance={result?.performance} />
             {selectedCount > 0 && selectedCount < 2 && (
               <p className="mt-4 text-xs text-neutral-400">Pick at least two parts to see compatibility.</p>
             )}
